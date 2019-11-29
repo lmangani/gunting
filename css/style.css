@@ -29,8 +29,10 @@ html {
   }
 
   .remote_video {
-    width: 22%;
-    height: 22%;
+    width: 18%;
+    min-width: 200px;
+    height: 18%;
+    min-height: 200px;
     text-align: center;
     margin: 0.5em;
     border-radius: 5px;
