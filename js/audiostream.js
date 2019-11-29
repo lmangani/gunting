@@ -24,7 +24,7 @@ const PCM = function () {
         function downsample(arr) {
             var out = new Int16Array(arr.length);
             for (var i = 0; i < arr.length; i++) {
-                out[i] = arr[i] * 0xFFFF;
+                out[i] = Math.min(1, arr[i]) * 0x7fff
             }
             return out.buffer;
         }
@@ -33,9 +33,9 @@ const PCM = function () {
             var arr = [];
             for (var i = 0; i < abuffer.getChannelData(0).length; i++) {
                 var left = abuffer.getChannelData(0)[i];
-                var right = abuffer.getChannelData(1)[i];
+                // var right = abuffer.getChannelData(1)[i];
                 arr.push(left);
-                arr.push(right);
+                // arr.push(right);
             }
             return new Float32Array(arr);
         }
