@@ -6,7 +6,7 @@ html {
     background-color: #4a4a4a;
   }  
 
-.local_video {
+  .local_video {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -28,10 +28,12 @@ html {
     height: 200px;
     text-align: center;
     margin: 0.5em;
+    border-radius: 5px;
   }
 
   .remote_container {
     width: 100%;
+    height: 100%
     position: fixed;
     bottom: 0;
   }
