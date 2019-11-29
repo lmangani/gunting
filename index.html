@@ -23,9 +23,12 @@
 
 <body>
     
+    <!-- Hidden Local Video -->
+    <video class="local_video" controls autoplay id="local_video"></video>
+    
+    <!-- Remote Display Strip -->
     <div class="remote_container" id="remote_container">
-        <video class="local_video" controls autoplay id="local_video"></video>
-        <!-- canvas class="local_canvas" id="local_canvas"></canvas -->
+        <canvas class="remote_video" id="local_canvas"></canvas>
     </div>
 
     <div class="modal" id="start_modal">
