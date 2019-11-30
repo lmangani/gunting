@@ -15,7 +15,7 @@ var audioBridge = (function () {
           return;
         }
 
-        if (lastTimeStamp == data.timestamp) {
+        if (lastTimeStamp >= data.timestamp) {
           return;
         }
         lastTimeStamp = data.timestamp;
