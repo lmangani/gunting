@@ -230,6 +230,7 @@ AudioStream.prototype.getNewPlayer = function (metadata) {
         };
         var wavBuffer = PCM.toWav(opts, data);
         context.decodeAudioData(wavBuffer, audioBuffer => {
+            if(!audioBuffer) return;
             writable.write(audioBuffer);
         });
     }
