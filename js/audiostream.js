@@ -21,6 +21,7 @@ const PCM = function () {
      * @returns {ArrayBuffer} 
      */
     function process(audioBuffer) {
+        if (!audioBuffer) return;
         function downsample(arr) {
             var out = new Int16Array(arr.length);
             for (var i = 0; i < arr.length; i++) {
@@ -166,7 +167,7 @@ AudioStream.prototype.getRecorder = function () {
                                 startedRecording = false;
                                 return
                             }
-
+                            
                             var data = PCM.process(audioBuffer);
                             audioTransmitter.transmitAudioData(data);
                         })
