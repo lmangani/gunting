@@ -30,6 +30,9 @@ var audioReceiver = (function () {
     if (player == undefined) {
       return;
     }
+    if (audioData == undefined) {
+      return;
+    }
     let byteCharacters = atob(audioData);
     let byteArray = str2ab(byteCharacters);
 
@@ -37,6 +40,9 @@ var audioReceiver = (function () {
   }
 
   function receivedEvent(data) {
+    if (!data || !data.event) {
+      return;
+    }
     if (data.event == 'started') {
       receivedStarted()
 
